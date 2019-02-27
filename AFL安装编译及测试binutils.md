@@ -25,7 +25,7 @@
 1.  sudo CC=afl-gcc ./configure
 ```
 3. make，这一步从输出的信息中可以看到afl插桩，此时afl-gcc编译并安装binutils完成，此时binutils文件夹下会生成objdump、nm-new（nm）、readelf三个文件夹
-4. 切换为root身份，创建in、out文件夹，创建空文本放入in文件夹中，执行afl，执行结果如图：
+4. 切换为root身份，创建in、out文件夹，创建空文本放入in文件夹中，执行afl：
 ```afl-fuzz -i in -o out binutils-2.26/binutils/objdump -d @@```
 其中 in为输入文件夹，存放初始文件，out为输出文件夹，存放fuzz结果，@@在实际执行时会替换为替换成测试样本目录下的测试样本。
 5. 退出afl：ctrl + c
